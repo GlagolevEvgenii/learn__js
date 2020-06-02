@@ -36,20 +36,11 @@ for(let i = 0; i < 2; i++){
           b = prompt('На сколько оцените его?', '');
     console.log(a);
     console.log(b);
-    if( a === "" || a.length > 50 && a !== ""){
-        a = prompt('Один из последних просмотренных фильмов?', '');
-        --i;
-    }else if(a === null){
-        a = prompt('Один из последних просмотренных фильмов?', '');
-        --i;
-    }else if ( b === "" || a.length > 50 && b !== ""){
-        b = prompt('На сколько оцените его?', '');
-        --i;
-    }else if ( b === null){
-        b = prompt('На сколько оцените его?', '');
+    if( a != null && b != null && a !== '' && b !== '' && a.length < 50 ){
+        personalMovieDB.movies[a] = b;
+    }else {
         --i;
     }
-    personalMovieDB.movies[a] = b;
 }
 
 
