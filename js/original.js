@@ -34,10 +34,20 @@ if(+personalMovieDB.count < 10){
 for(let i = 0; i < 2; i++){
     let   a = prompt('Один из последних просмотренных фильмов?', ''),
           b = prompt('На сколько оцените его?', '');
-    if( a === ""){
+    console.log(a);
+    console.log(b);
+    if( a === "" || a.length > 50 && a !== ""){
         a = prompt('Один из последних просмотренных фильмов?', '');
-    }else if(a.length > 50 && a !== ""){
+        --i;
+    }else if(a === null){
         a = prompt('Один из последних просмотренных фильмов?', '');
+        --i;
+    }else if ( b === "" || a.length > 50 && b !== ""){
+        b = prompt('На сколько оцените его?', '');
+        --i;
+    }else if ( b === null){
+        b = prompt('На сколько оцените его?', '');
+        --i;
     }
     personalMovieDB.movies[a] = b;
 }
