@@ -1,6 +1,5 @@
 /* Задание на урок:
 
-1) Первую часть задания повторить по уроку
 
 2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
 false - выводит в консоль главный объект программы
@@ -20,7 +19,7 @@ function start() {
         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
     }
 }
-start();
+// start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -29,6 +28,21 @@ const personalMovieDB = {
     genres: [],
     privat: false
 };
+
+function showMyDB() {
+    if (personalMovieDB.privat === false) {
+        console.log(personalMovieDB)
+    }
+}
+showMyDB();
+
+function writeYourGenres() {
+    for (let i = 0; i < 3; i++) {
+        let answer = prompt('Ваш любимый жанр под номером', '');
+        personalMovieDB.genres.push(answer);
+    }
+}
+writeYourGenres();
 
 function rememberMyFilms() {
     for(let i = 0; i < 2; i++){
@@ -43,7 +57,7 @@ function rememberMyFilms() {
         }
     }
 }
-rememberMyFilms();
+//rememberMyFilms();
 
 function detectPersonalLevel() {
     if(+personalMovieDB.count < 10){
@@ -57,14 +71,9 @@ function detectPersonalLevel() {
     }
 }
 
-detectPersonalLevel();
+//detectPersonalLevel();
 
 
 
 
 
-
-
-console.log(personalMovieDB);
-
-// Код возьмите из предыдущего домашнего задания
