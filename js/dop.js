@@ -4,9 +4,9 @@
 //     Выведите его на экран первые две цифры полученного числа.
 
 
-    const num = 33721;
+const num = 33721;
 let arr = String(num).split("");
-let multiplication = arr[0]*arr[1]*arr[2]*arr[3]*arr[4];
-let result  = multiplication**3;
-let finish = String (result).slice(0,2);
-console.log(+finish)
+let multiplication = arr[0] * arr[1] * arr[2] * arr[3] * arr[4];
+let result = multiplication ** 3;
+let finish = String(result).slice(0, 2);
+console.log(+finish);
