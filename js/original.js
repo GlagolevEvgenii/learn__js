@@ -11,7 +11,7 @@ genres
 P.S. Функции вызывать не обязательно*/
 'use strict';
 
-let numberOfFilms
+let numberOfFilms;
 
 function start() {
     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
@@ -34,7 +34,7 @@ function showMyDB() {
         console.log(personalMovieDB)
     }
 }
-showMyDB();
+//showMyDB();
 
 function writeYourGenres() {
     for (let i = 0; i < 3; i++) {
@@ -42,7 +42,7 @@ function writeYourGenres() {
         personalMovieDB.genres.push(answer);
     }
 }
-writeYourGenres();
+//writeYourGenres();
 
 function rememberMyFilms() {
     for(let i = 0; i < 2; i++){
