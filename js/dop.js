@@ -32,11 +32,11 @@ function weeks() {
         }
     });
 }
-weeks();
+//weeks();
 let array = ["333", "546456", "9454", "775", "23423", "56765", "34543"];
 array.forEach(function (item, i) {
     if(+array[i][0] === 3 || +array[i][0] === 7){
-        console.log( array[i])
+        //console.log( array[i]);
     }
 });
 

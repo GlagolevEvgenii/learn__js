@@ -26,15 +26,28 @@ const personalMovieDB = {
             numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
         }
     },
+    toggleVisibleMyDB:function toggleVisibleMyDB(){
+        if (personalMovieDB.privat === false) {
+            personalMovieDB.privat = true;
+        }
+    },
     showMyDB:function showMyDB() {
         if (personalMovieDB.privat === false) {
-            console.log(personalMovieDB)
+            console.log(personalMovieDB);
         }
     },
     writeYourGenres:function writeYourGenres() {
         for (let i = 0; i < 3; i++) {
-            let answer = prompt('Ваш любимый жанр под номером'+ "" + i + 1, '');
-            personalMovieDB.genres.push(answer);
+            let answer = prompt('Ваш любимый жанр под номером'+ "" + (i + 1), '');
+            console.log(typeof i);
+            if( answer != null && answer !== '' ){
+                personalMovieDB.genres.push(answer);
+            }else {
+                i--;
+            }
+            personalMovieDB.genres.forEach(function(item, i) {
+                console.log(`Любимый жанр ${i} - это ${item}.`);
+            });
         }
     },
     rememberMyFilms:function rememberMyFilms() {
@@ -63,8 +76,9 @@ const personalMovieDB = {
     }
 };
 // start();
-//showMyDB();
-//writeYourGenres();
+personalMovieDB.toggleVisibleMyDB();
+personalMovieDB.showMyDB();
+personalMovieDB.writeYourGenres();
 //rememberMyFilms();
 //detectPersonalLevel();
 
