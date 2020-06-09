@@ -20,23 +20,23 @@ const personalMovieDB = {
     actors: {},
     genres: [],
     privat: false,
-    start:function start() {
+    start:function () {
         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
         while (numberOfFilms === '' || numberOfFilms == null || isNaN(numberOfFilms)){
             numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
         }
     },
-    toggleVisibleMyDB:function toggleVisibleMyDB(){
+    toggleVisibleMyDB:function (){
         if (personalMovieDB.privat === false) {
             personalMovieDB.privat = true;
         }
     },
-    showMyDB:function showMyDB() {
+    showMyDB:function () {
         if (personalMovieDB.privat === false) {
             console.log(personalMovieDB);
         }
     },
-    writeYourGenres:function writeYourGenres() {
+    writeYourGenres:function () {
         for (let i = 0; i < 3; i++) {
             let answer = prompt('Ваш любимый жанр под номером'+ "" + (i + 1), '');
             if( answer != null && answer !== '' ){
@@ -44,12 +44,13 @@ const personalMovieDB = {
             }else {
                 i--;
             }
-            personalMovieDB.genres.forEach(function(item, i) {
-                console.log(`Любимый жанр ${i} - это ${item}.`);
-            });
         }
+        personalMovieDB.genres.forEach(function(item, k) {
+            console.log(`Любимый жанр ${k + 1} - это ${item}.`);
+        });
+
     },
-    rememberMyFilms:function rememberMyFilms() {
+    rememberMyFilms:function () {
         for(let i = 0; i < 2; i++){
             let   a = prompt('Один из последних просмотренных фильмов?', ''),
                 b = prompt('На сколько оцените его?', '');
@@ -62,7 +63,7 @@ const personalMovieDB = {
             }
         }
     },
-    detectPersonalLevel:function detectPersonalLevel() {
+    detectPersonalLevel:function () {
         if(+personalMovieDB.count < 10){
             alert("Просмотрено довольно мало фильмов");
         }else if(+personalMovieDB.count > 10 && + +personalMovieDB.count < 30){
