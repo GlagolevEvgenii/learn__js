@@ -39,7 +39,6 @@ const personalMovieDB = {
     writeYourGenres:function writeYourGenres() {
         for (let i = 0; i < 3; i++) {
             let answer = prompt('Ваш любимый жанр под номером'+ "" + (i + 1), '');
-            console.log(typeof i);
             if( answer != null && answer !== '' ){
                 personalMovieDB.genres.push(answer);
             }else {
