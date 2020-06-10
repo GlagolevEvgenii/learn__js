@@ -49,7 +49,7 @@ const str = "урок-3-был слишком легким";
 let strNew = str[0].toUpperCase()+ str.slice(1);
 strNew = strNew.split("-").join(" ");
 let strWord = strNew.slice(strNew.length - 6);
-let strFinish = strWord.slice(0,4) + "o"
+let strFinish = strWord.slice(0,4) + "o";
 console.log( strNew);
 alert(strFinish);
 
