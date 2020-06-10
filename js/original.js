@@ -76,9 +76,9 @@ const personalMovieDB = {
     }
 };
 // start();
-personalMovieDB.toggleVisibleMyDB();
-personalMovieDB.showMyDB();
-personalMovieDB.writeYourGenres();
+//personalMovieDB.toggleVisibleMyDB();
+//personalMovieDB.showMyDB();
+//personalMovieDB.writeYourGenres();
 //rememberMyFilms();
 //detectPersonalLevel();
 
