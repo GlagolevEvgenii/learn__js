@@ -57,9 +57,12 @@ alert(strFinish);
 
 const arrNew = [20, 33, 1, "Человек", 2, 3];
 let arrSort = arrNew.filter(Number);
+let sum =0;
 arrSort.forEach(function (item,index) {
-     Math.sqrt(item**3);
-    console.log(Math.sqrt(item**3));
+    sum += item**3;
+    if (index === arrSort.length-1){
+        console.log(Math.sqrt(sum));
+    }
 });
 
 console.log(arrSort);
