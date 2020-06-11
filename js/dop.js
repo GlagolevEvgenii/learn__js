@@ -51,8 +51,8 @@ let strNew = str[0].toUpperCase()+ str.slice(1);
 strNew = strNew.split("-").join(" ");
 let strWord = strNew.slice(strNew.length - 6);
 let strFinish = strWord.slice(0,4) + "o";
-//console.log( strNew);
-//alert(strFinish);
+console.log( strNew);
+alert(strFinish);
 
 
 const arrNew = [20, 33, 1, "Человек", 2, 3];
@@ -62,19 +62,19 @@ arrSort.forEach(function (item,index) {
     console.log(Math.sqrt(item**3));
 });
 
-console.log(arrSort);
+//console.log(arrSort);
 function test(a) {
-    console.log(typeof (a) == "string");
     if(typeof (a) === "string" ){
-        let notEmpty =  a.replace("  ","");
+        let notEmpty =  a.trim();
         console.log(notEmpty);
         alert(" вы вводите строку" + notEmpty);
     }if(a.length > 50){
         alert("длинная строка");
-        a[a.length + 1] = "...";
+        a = a.trim() + "...";
+        console.log(a);
     }
 }
-test("fdhdfhdfh rbrt rtgtbrt");
+test("   Lorem ipsum — классический текст-«рыба». Является искажённым отрывком из философского трактата Марка Туллия Цицерона «О пределах добра и зла», написанного в 45 году до н. э. на латинском языке, обнаружение сходства атрибутируется Ричарду МакКлинтоку  ");
 
 
 
