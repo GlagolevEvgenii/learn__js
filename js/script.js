@@ -13,6 +13,9 @@
 5) Добавить нумерацию выведенных фильмов */
 
 'use strict';
+document.querySelector(".promo__adv").remove();
+document.querySelector(".promo__genre").textContent = "драма";
+document.querySelector(".promo__bg").style.background = "url(\"img/bg.jpg\") center center/cover no-repeat";
 
 const movieDB = {
     movies: [
@@ -23,4 +26,15 @@ const movieDB = {
         "Скотт Пилигрим против..."
     ]
 };
+let moviesArr = movieDB.movies;
+let sortArr =  moviesArr.sort();
+for (let i =0; i < sortArr.length; i++ ){
+    let itemList = sortArr[i];
+    let itemPage = document.querySelectorAll(".promo__interactive-item");
+    itemPage[i].textContent = `${i+1+" "}` + itemList;
+}
+
+
+
+
 
