@@ -1,16 +1,12 @@
 /* Задания на урок:
 
-1) Удалить все рекламные блоки со страницы (правая часть сайта)
 
-2) Изменить жанр фильма, поменять "комедия" на "драма"
 
-3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
-Реализовать только при помощи JS
+3) При клике на мусорную корзину - элемент будет удаляться из списка (сложно)
 
-4) Список фильмов на странице сформировать на основании данных из этого JS файла.
-Отсортировать их по алфавиту 
 
-5) Добавить нумерацию выведенных фильмов */
+
+ */
 
 'use strict';
 document.querySelector(".promo__adv").remove();
@@ -28,11 +24,36 @@ const movieDB = {
 };
 let moviesArr = movieDB.movies;
 let sortArr =  moviesArr.sort();
-for (let i =0; i < sortArr.length; i++ ){
-    let itemList = sortArr[i];
-    let itemPage = document.querySelectorAll(".promo__interactive-item");
-    itemPage[i].textContent = `${i+1+" "}` + itemList;
-}
+const button = document.querySelector("button"),
+    checkBox = document.querySelector("[type='checkbox']"),
+    list = document.querySelector(".promo__interactive-list"),
+    input =  document.querySelector(".adding__input") ;
+list.innerHTML = "";
+console.log(moviesArr);
+button.addEventListener('click',function (e) {
+    e.preventDefault();
+    let answer = input.value;
+    if(checkBox.checked ){
+        console.log("Добавляем любимый фильм");
+    } if( answer.length > 21){
+        let shortAnswer = answer.slice(0,20) + "...";
+        moviesArr.push(shortAnswer);
+    }else{
+        moviesArr.push(answer);
+    }
+    sortArr =  moviesArr.sort();
+    list.innerHTML = "";
+    sortArr.forEach(function (item,i) {
+        let list = document.querySelector(".promo__interactive-list");
+        list.innerHTML += `<li class="promo__interactive-item">${i+1} ${item}<li>`;
+    });
+});
+
+sortArr.forEach(function (item,i) {
+    list.innerHTML += `<li class="promo__interactive-item">${i+1} ${item}<li>`;
+});
+
+
 
 
 
