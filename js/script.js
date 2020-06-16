@@ -45,12 +45,12 @@ button.addEventListener('click',function (e) {
     list.innerHTML = "";
     sortArr.forEach(function (item,i) {
         let list = document.querySelector(".promo__interactive-list");
-        list.innerHTML += `<li class="promo__interactive-item">${i+1} ${item}<li>`;
+        list.innerHTML += `<li class="promo__interactive-item">${i+1} ${item}<div class="delete"></div></li>`;
     });
 });
 
 sortArr.forEach(function (item,i) {
-    list.innerHTML += `<li class="promo__interactive-item">${i+1} ${item}<li>`;
+    list.innerHTML += `<li class="promo__interactive-item">${i+1} ${item}<div class="delete"></div></li>`;
 });
 
 
