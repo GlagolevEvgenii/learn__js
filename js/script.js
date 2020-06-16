@@ -30,7 +30,7 @@ const button = document.querySelector("button"),
     input =  document.querySelector(".adding__input") ;
 list.innerHTML = "";
 console.log(moviesArr);
-button.addEventListener('click',function (e) {
+button.addEventListener('submit',function (e) {
     e.preventDefault();
     let answer = input.value;
     if(checkBox.checked ){
