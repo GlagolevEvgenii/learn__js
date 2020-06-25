@@ -30,17 +30,19 @@ window.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
-    const deadline = '2020-06-30';
+    const deadline = '2020-06-27 07:31:50';
     function getTimeRenaining(endtime) {
         const  t = Date.parse(endtime) - Date.parse(new Date()),
             days = Math.floor(t /(1000*60*60*24)),
             hours = Math.floor((t / (1000*60*60) % 24)),
+            discountHours = Math.floor((t / (1000*60*60))),
             minutes = Math.floor((t /1000/60 ) % 60),
             seconds = Math.floor((t /1000 ) % 60);
         return {
             'total':t,
             'days':days,
             'hours':hours,
+            'discountHours':discountHours,
             'minutes':minutes,
             'seconds':seconds
         };
@@ -58,6 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
             hours = document.querySelector("#hours"),
             minutes = document.querySelector("#minutes"),
             seconds = document.querySelector("#seconds"),
+            discount = document.querySelector(".promotion__descr span"),
             timeInterval = setInterval(updateClock,1000);
         updateClock();
         function updateClock() {
@@ -66,6 +69,15 @@ window.addEventListener("DOMContentLoaded", () => {
             hours.innerHTML =  getZero(t.hours);
             minutes.innerHTML =  getZero(t.minutes);
             seconds.innerHTML =  getZero(t.seconds);
+            let discountPercent = 20;
+            discount.innerHTML = discountPercent +"%";
+            if(t.discountHours <= 72 && t.discountHours % 5 === 0 && t.discountHours > 24){
+                let discountPercentMinus = Math.floor((t.discountHours - 24 - t.discountHours % 5)/5);
+                discount.innerHTML = 10 + discountPercentMinus +"%";
+            }
+            if(t.discountHours <= 24){
+                discount.innerHTML ="10%";
+            }
             if(t.total <= 0){
                 clearInterval(timeInterval);
             }

@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         checkBox = document.querySelector("[type='checkbox']"),
         list = document.querySelector(".promo__interactive-list"),
         input = document.querySelector(".adding__input");
-    console.log(moviesArr);
+    //console.log(moviesArr);
     const sortArr = (arr) => {
         arr.sort();
     };
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 answer = `${answer.substring(0,22)}...`;
             }
             if (checkBox.checked) {
-                console.log("Добавляем любимый фильм");
+                //console.log("Добавляем любимый фильм");
             }
             movieDB.movies.push(answer);
             sortArr(movieDB.movies);
