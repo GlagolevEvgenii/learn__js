@@ -84,6 +84,21 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }
     setCLock(".timer", deadline);
+    //modal
+
+    const modal = document.querySelector(".modal"),
+        openModal = document.querySelectorAll("[data-modal]"),
+        closeModal = document.querySelector("[data-close]");
+    openModal.forEach(item => {
+        item.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+    });
+    closeModal.addEventListener('click', () => {
+        modal.style.display = "none";
+    });
+
+
 
 });
 
