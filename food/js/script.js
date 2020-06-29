@@ -89,14 +89,39 @@ window.addEventListener("DOMContentLoaded", () => {
     const modal = document.querySelector(".modal"),
         openModal = document.querySelectorAll("[data-modal]"),
         closeModal = document.querySelector("[data-close]");
+    function openModalCall(){
+        modal.classList.add("show");
+        modal.classList.remove("hide");
+        document.body.style.overflow ="hidden";
+        clearInterval(modalTimerID);
+    }
+    function closeModalCall(){
+        modal.classList.remove("show");
+        document.body.style.overflow ="";
+    }
     openModal.forEach(item => {
-        item.addEventListener("click", () => {
-            modal.style.display = "flex";
-        });
+        item.addEventListener("click",openModalCall );
     });
-    closeModal.addEventListener('click', () => {
-        modal.style.display = "none";
+
+    closeModal.addEventListener('click',closeModalCall );
+    modal.addEventListener('click',(e)=>{
+        if(e.target === modal){
+            closeModalCall();
+        }
     });
+    document.addEventListener('keydown',(e)=>{
+        if(e.code ==="Escape" && modal.classList.contains("show")){
+            closeModalCall();
+        }
+    });
+    const modalTimerID = setTimeout(openModalCall,5000);
+    function showModalByScroll(){
+        if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight){
+            openModalCall();
+            window.removeEventListener("scroll",showModalByScroll);
+        }
+    }
+    window.addEventListener("scroll",showModalByScroll);
 
 
 
