@@ -1,3 +1,4 @@
+
 /* Задания на урок:
 
 
@@ -52,7 +53,6 @@ button.addEventListener('submit',function (e) {
 sortArr.forEach(function (item,i) {
     list.innerHTML += `<li class="promo__interactive-item">${i+1} ${item}<li>`;
 });
-
 
 
 
