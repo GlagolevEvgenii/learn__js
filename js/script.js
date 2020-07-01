@@ -29,7 +29,7 @@ const button = document.querySelector("button"),
     list = document.querySelector(".promo__interactive-list"),
     input =  document.querySelector(".adding__input") ;
 list.innerHTML = "";
-console.log(moviesArr);
+console.log(list);
 button.addEventListener('submit',function (e) {
     e.preventDefault();
     let answer = input.value;
