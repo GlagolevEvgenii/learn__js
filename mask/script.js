@@ -16,9 +16,7 @@ const inputPhone = document.querySelectorAll(".popup__call-phone"),
             if(e.target.classList.contains('popup__call-phone-hidden')){
                 e.target.classList.remove('popup__call-phone-hidden');
             }
-
         });
     });
 
-
-})
+});
