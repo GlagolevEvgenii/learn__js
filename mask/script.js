@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded",()=>{
-const inputPhone = document.querySelectorAll("input[type=text]"),
+const inputPhone = document.querySelectorAll(".popup__call-phone"),
     wrapper = document.querySelector(".popup__call-phoneblock"),
     triggerOpen = document.querySelectorAll(".popup__call-wrap");
     triggerOpen.forEach((button)=>{
@@ -8,19 +8,17 @@ const inputPhone = document.querySelectorAll("input[type=text]"),
                 arrow = button.querySelector(".popup__call-svg");
             arrow.classList.add("popup__call-svg-active");
             nextElement.style.visibility = "visible";
-       })
+       });
     });
     inputPhone.forEach((phone)=>{
-        phone.addEventListener('click',()=>{
-            let parent = phone.parentElement;
-            if(parent.classList.contains('popup__call-phone-hidden')){
-                parent.classList.remove('popup__call-phone-hidden');
-            }else{
-                parent.classList.add('popup__call-phone-hidden');
+        phone.addEventListener('click',(e)=>{
+            console.log(e.target);
+            if(e.target.classList.contains('popup__call-phone-hidden')){
+                e.target.classList.remove('popup__call-phone-hidden');
             }
 
-        })
-    })
+        });
+    });
 
 
 })
