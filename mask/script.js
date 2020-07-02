@@ -1,22 +1,13 @@
-window.addEventListener("DOMContentLoaded",()=>{
-const inputPhone = document.querySelectorAll(".popup__call-phone"),
-    wrapper = document.querySelector(".popup__call-phoneblock"),
-    triggerOpen = document.querySelectorAll(".popup__call-wrap");
-    triggerOpen.forEach((button)=>{
-        button.addEventListener('click',()=>{
-            let nextElement = button.parentElement.nextElementSibling,
-                arrow = button.querySelector(".popup__call-svg");
-            arrow.classList.add("popup__call-svg-active");
-            nextElement.style.visibility = "visible";
-       });
+window.addEventListener("DOMContentLoaded", () => {
+    let inputPhone = document.querySelectorAll(".popup__call-phone"),
+        wrapper = document.querySelectorAll(".popup__call-phoneblock"),
+        arrow = document.querySelectorAll(".popup__call-svg"),
+        triggerOpen = document.querySelectorAll(".popup__call-wrap");
+    wrapper.addEventListener('click',(e)=>{
+        if(e.target.arrow[0] || e.target.triggerOpen[0]){
+
+        }
     });
-    inputPhone.forEach((phone)=>{
-        phone.addEventListener('click',(e)=>{
-            console.log(e.target);
-            if(e.target.classList.contains('popup__call-phone-hidden')){
-                e.target.classList.remove('popup__call-phone-hidden');
-            }
-        });
-    });
+
 
 });
